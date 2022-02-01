@@ -1,2 +1,4 @@
 # digi-crafts
-Digital Crafts work
+
+
+Homework and review from the Digital Crafts BootCamp
