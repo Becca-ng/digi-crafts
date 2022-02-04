@@ -1,0 +1,21 @@
+{
+  "name": "restaurantdb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "'",
+  "scripts": {
+    "db:create": "createdb restaurantDB",
+    "db:destroy": "dropdb restaurantDB",
+    "db:init": "psql -f schema.sql restaurantDB",
+    "db:seed": "psql -f seed.sql restaurantDB",
+    "db:reset": "npm run db:destroy; npm run db:create && npm run db:init && npm run db:seed",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pg": "^8.7.1",
+    "ph": "^0.1.10",
+    "sequelize": "^6.12.5"
+  }
+}

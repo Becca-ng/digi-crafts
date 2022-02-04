@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MadLib</title>
+</head>
+
+<body>
+    <!-- HTML goes here -->
+    <h1>MadLib</h1>
+
+    <!-- animal -->
+    <form id="madLibForm" style="display: block;">
+        <p class="form-group">
+            <label for="animal">Animal</label>
+            <br>
+            <input type="text" name="animal" id="animal">
+            <br>
+        </p>
+<!-- country -->
+        <p class="form-group">
+            <label for="country">Country</label>
+            <br>
+            <input type="text" name="country" id="country">
+            <br>
+        </p>
+
+<!-- plural -->
+        <p class="form-group">
+            <label for="pluralNoun">Plural Noun</label>
+            <br>
+            <input type="text" name="pluralNoun" id="pluralNoun">
+            <br>
+        </p>
+
+        <!-- food -->
+        <p class="form-group">
+            <label for="food">Food</label>
+            <br>
+            <input type="text" name="food" id="food">
+            <br>
+        </p>
+
+         <!-- device -->
+         <p class="form-group">
+            <label for="device">Device</label>
+            <br>
+            <input type="text" name="device" id="device">
+            <br>
+        </p>
+
+         <!-- noun -->
+         <p class="form-group">
+            <label for="noun">Noun</label>
+            <br>
+            <input type="text" name="noun" id="noun">
+            <br>
+        </p>
+
+         <!-- adj -->
+         <p class="form-group">
+            <label for="adjective">Adjective</label>
+            <br>
+            <input type="text" name="adjective" id="adjective">
+            <br>
+        </p>
+
+        <button type="submit">Do the MadLib!</button>
+    </form>
+
+
+    <div id="madLibStory">
+        <h2>Nature Show</h2>
+        <style>
+            span {
+              color: red;
+            }
+            </style>
+        <p>
+            The majestic <span class="animal"></span> has roamed the forests of
+            <span class="country"></span> for thousands of years. Today, she
+            wanders
+            in search of <span class="pluralNoun" ></span>. She must find food to
+            survive. While hunting for <span class="food"></span>, she found a
+            <span class="device"></span> hidden behind a <span class="noun"></span>.
+            Suddenly, the device turned on and started to become <span class="adjective"></span>.
+            The king of <span class="country"></span> suddenly appeared, jumped on top
+            of the <span class="adjective"></span> <span class="device"></span> and floated
+            off into the sunset.
+        </p>
+        <p>
+            The End.
+        </p>
+
+        <button type="button" id="restart">Restart!</button>
+    </div>
+
+    <script src="ML.js"></script>
+</body>
+
+</html>

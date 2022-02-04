@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/app.css" type="text/css">
+
+    <title>All Movies</title>
+</head>
+
+
+<center>
+    <h1 id=title> All Movies </h1>
+</center>
+
+<body>
+    <div id='searchBtn'>
+        <center>
+            <button onclick='movieLoop()' id='allBtn'> Released Films </button>
+            <%let upComing2 = newMovie%>
+            <!-- https://www.geeksforgeeks.org/how-to-use-ejs-in-javascript/ -->
+                <script type="text/javascript">
+                    // Empty arrays relMovie = released movie soonMovie = 'coming soon' movie
+                    let relMovie = [];
+                    let soonMovie = [];
+                    let upComing = '<%- upComing2 %>';
+                    function movieLoop() {
+                        console.log("hi");
+                        for (let currentMovie of upComing) {
+                            console.log(currentMovie);
+                            if (currentMovie.ComingSoon) {
+                                console.log("pushing " + JSON.stringify(currentMovie))
+                                soonMovie.push(JSON.stringify(currentMovie));
+                            }
+                            else {
+                                relMovie.push(currentMovie);
+                            }
+                        }
+                        console.log(soonMovie[0]);
+                        console.log();
+                    };
+
+
+                    // loop 
+                    // id.onclick = function movieLoop() {
+                    //     for (let movie of list) {
+                    //         if (movie.ComingSoon) {soonMovie.push(movie)  }
+                    //         else { console.log('False') }
+                    //     };
+
+
+                    console.log(relMovie);
+                    console.log(soonMovie);
+                    console.log('<%=upComing2%>');
+
+                </script>
+                <div>
+                    <h1> This is </h1>
+                </div>
+
+                <!-- <button id=allBtn> Upcoming Films </button> -->
+        </center>
+    </div>
+
+
+    <div id='grid' class='grid-container'>
+    </div>
+
+</body>
+
+
+</html>

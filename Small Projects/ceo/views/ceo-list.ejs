@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/app.css" type="text/css">
+
+
+    <title>Ceo List</title>
+</head>
+
+<body>
+
+    <center id = "head">
+        Ceo List
+   </center>
+<ul>
+   <% for(let i of db) { %>
+    <li>
+          <a href = './<%=i.url%>'</a>
+            <%=i.name%> 
+    </li>       
+</a>  
+<% } %>
+</ul>
+
+</body>
+
+</html>

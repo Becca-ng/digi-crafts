@@ -1,0 +1,74 @@
+<!-- Create a simple HTML form with a single field called "Name" and make it required. Test in multiple browsers what happens when you click "Submit" without filling out the required field. Every browser is a little different. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form with Required Field Solution</title>
+    <style>
+        body {
+            margin: 0 auto;
+            max-width: 500px;
+        }
+    </style>
+</head>
+
+<!-- Form starts here -->
+
+<body>
+    <h1>Form that bullies you if you don't fill things in correctly</h1>
+    <form method="POST" id="f">
+        <!-- form makes it a form  -->
+        <label for="name-input">Name:</label>
+        <!-- input is where you have the type of input and requirements-->
+        <input type="text" id="name-input" required pattern=".{5,10}"
+            oninvalid="this.setCustomValidity('Write your name dummy')" oninput="this.setCustomValidity('')" />
+        <!-- patterns are effected by the type of input, in this case it sets min/max length -->
+        <br>
+        <label for="age">Age:</label>
+        <!-- type: # means # required, type:range sets the min and max -->
+        <input type="number" type="range" min="1" max="100" id="age" required
+            oninvalid="this.setCustomValidity('Does anyone even know your birthday?')"
+            oninput="this.setCustomValidity('')" / />
+        <br>
+        <label for="pw">Password:</label>
+        <input type="password" required pattern=".{6,15}"
+            oninvalid="this.setCustomValidity('Your password is dumb like you')" oninput="this.setCustomValidity('')" />
+        <br>
+        <label for="about">About me(Maxium 250 Characters):</label>
+        <textarea type="text" rows="5" cols="33" required
+            oninvalid="this.setCustomValidity('Do you even have anything interesting to write about?')"
+            oninput="this.setCustomValidity('')" ></textarea>
+        <br>
+        <!-- Robot check was the worst part -->
+        <label for="robot" id="robotcheck">
+            Is this you?
+            <br>
+            <img src="/Users/beccung/Desktop/digitalcrafts/Practice/formval/istockphoto-1214697858-640x640.jpeg"
+                oninput="this.setCustomValidity('')" />
+            <br>
+            <input type="radio" value="Yes" name="robot" id="robotcheckyes">
+            <label for="Yes"> Yes </label>
+            <input type="radio" value="No" name="robot" id="robotcheckno">
+            <label for="No"> No </label>
+        </label>
+        <!-- js for the submit button -->
+        <script>
+            function sub() {
+                if (document.getElementById("robotcheckyes").checked === true) {
+                    alert("You are a robot");
+                    document.getElementById("f").reset();
+                }
+                else {
+                }
+            }
+        </script>
+        <!-- Submit button -->
+        <br>
+        <button onclick="sub()"> Submit </button>
+
+    </form>
+
+</html>

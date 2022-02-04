@@ -1,0 +1,15 @@
+Search Button -> results pg -> movie info
+
+the search button will have an onclick event that populates a grid that displays the poster of the movie depending
+on the genre they clicked on
+
+-make a grid for movie genres 
+
+-make a grid for other all movies 
+
+
+
+
+csData = coming soon data (movies that have the coming soon)
+
+-onclick in ejs 
