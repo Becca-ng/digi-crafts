@@ -4,6 +4,9 @@
     min-height:96vw;
 }
 
+li{
+    list-style-type: none;
+}
 .main{
     flex: 1 0 auto;
 }
