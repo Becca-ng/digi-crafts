@@ -1,10 +1,10 @@
-const Contact = () => {
+const Contact = ({name,address,state,zip,phoneNum,email}) => {
     return(
         <li>
-        <h2> Name </h2>
-        <p> Street Address</p>
-        <p>State</p>
-        <p>Email</p>
+        <h2> {name} </h2>
+        <p> Address: {address}, {state} {zip}</p>
+        <p> Phone Number: {phoneNum}</p>
+        <p>Email: {email} </p>
         </li>
     )
 }
