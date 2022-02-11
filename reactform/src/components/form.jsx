@@ -1,68 +1,57 @@
-import React from 'react'
+import { useState } from "react";
 
+const ContactForm = ({ action }) => {
 
-class Form extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      nameInput: '',
-      emailInput: '',
-      phoneInput: '',
-      addInput: '',
-      cityInput: '',
-      stateInput: '',
-      zipInput: ''
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+  const [contact, setContact] = useState({});
+
+  const handleChange = e => {
+    const target = e.target.value;
+    const key =e.target.dataset.keyname;
+    const value = e.target.value;
+    const updatedContact = {...contact};
+    console.log(...contact);
+    updatedContact[key] = value;
+    setContact(updatedContact);
+  };
+
+  function handleSubmission(e) {
+    action(e, contact);
   }
 
-  handleChange(event) {
-    this.setState({ value: event.target.value });
-  }
-
-  handleSubmit(event) {
-    alert('Submission Successful ');
-    event.preventDefault();
-  }
-
-
-  render() {
-    return (
-      <form className="split left" onSubmit={this.handleSubmit}>
-        <h1> This is a form I guess</h1>
-        <p> Submit your contact info:</p>
-        <label>
-          Name:
-          <input type='text' value={this.state.nameInput} onChange={this.handleChange} />
-        </label><br />
-        <label>
-          email:
-          <input type='text' value={this.state.emailInput} onChange={this.handleChange} />
-        </label><br />
-        <label>
-          Phone Number:
-          <input type='text' value={this.state.phoneInput} onChange={this.handleChange} />
-        </label><br />
-        <label>
-          Address:
-          <input type='text' value={this.state.addressInput} onChange={this.handleChange} />
-        </label><br />
-        <label>
-          City:
-          <input type='text' value={this.state.cityInput} onChange={this.handleChange} />
-        </label><br />
-        <label>
-          State:
-          <input type='text' value={this.state.stateInput} onChange={this.handleChange} />
-        </label><br />
-        <label>
-          Zip Code:
-          <input type='text' value={this.state.zipInput} onChange={this.handleChange} />
-        </label><br />
-        <input type="submit" value="Submit" />
-      </form>);
-  }
+  return (
+    <form onSubmit='handleSubmission(e)' className ='split left' >
+      <label>
+          <h1>Submit your Contact Info!</h1> 
+        <span>Full name</span>
+        <input onChange={handleChange} data-keyname='name' value={contact.name || ''} />
+      </label><br/>
+      <label>
+        <span>Address</span>
+        <input onChange={handleChange} data-keyname='address'  value={contact.address || ''} />
+      </label><br/>
+      <label>
+        <span>City</span>
+        <input onChange={handleChange} data-keyname='city'  value={contact.city || ''} />
+      </label><br/>
+      <label>
+        <span>State</span>
+        <input onChange={handleChange} data-keyname='state'  value={contact.state || ''} />
+      </label><br/>
+      <label>
+        <span>Zip Code</span>
+        <input onChange={handleChange} data-keyname='zipcode' value={contact.zipcode || ''} />
+      </label><br/>
+      <label>
+        <span>Telephone</span>
+        <input onChange={handleChange} data-keyname='phone' value={contact.phone || ''} />
+      </label><br/>
+      <label>
+        <span>Email</span>
+        <input onChange={handleChange} value={contact.email} />
+      </label><br/>
+      <button type="submit">Submit</button>
+    </form>
+  );
 };
 
-export default Form;
+export default ContactForm;

@@ -1,26 +1,17 @@
-import React from 'react';
-import Form from './components/form.jsx'
-import ContactInfo from './components/info.jsx'
-import './App.css';
+   
+import Footer from './sectioning/footer';
+import Header from './sectioning/header';
+import Main from './sectioning/main';
+
 
 function App() {
   return (
-    <div >
-    
-    <Form />
-    <ContactInfo />
+    <div className="y-wrap">
+      <Header />
+      <Main />
+      <Footer />
     </div>
   );
 }
 
 export default App;
-
-// updated 
-// import React, { useState } from 'react';
-// const LoginForm = (props)=>{
-//   const [inputValue, setInputValue] = useState("Default value");
-//   return (
-//     <input onChange={(e)=>setInputValue(e.currentTarget.value)/>
-//   );
-// }
-// export default LoginForm;
