@@ -1,8 +1,8 @@
-import ContactForm from '../components/form.jsx'
+import ContactForm from './form.jsx'
 import Main from '../sectioning/main.jsx'
 import '../App.css';
 
-const Contact = ({ contact }) => {
+const ContactDetail = ({ contact }) => {
     const {name, address, city, state, zipcode, phone, email, job} = contact;
   
     return (
@@ -18,4 +18,4 @@ const Contact = ({ contact }) => {
     );
   }
   
-  export default Contact;
+  export default ContactDetail;
