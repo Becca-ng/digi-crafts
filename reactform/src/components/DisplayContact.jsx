@@ -6,7 +6,7 @@ const Contact = ({ contact }) => {
     const {name, address, city, state, zipcode, phone, email, job} = contact;
   
     return (
-      <li className = 'split right'>
+      <li className = 'split display'>
         <h2>{name}</h2>
         <p>{address}</p>
         <p>{city}, {state}</p>

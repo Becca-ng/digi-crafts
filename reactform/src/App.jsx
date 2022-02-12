@@ -1,6 +1,6 @@
    
-import Footer from './sectioning/footer';
-import Header from './sectioning/header';
+import Footer from './sectioning/footer.jsx';
+import Header from './sectioning/header.jsx';
 import Main from './sectioning/main';
 
 

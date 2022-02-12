@@ -1,55 +1,67 @@
 import { useState } from "react";
+// import '../App.css';
 
 const ContactForm = ({ action }) => {
 
   const [contact, setContact] = useState({});
 
   const handleChange = e => {
-    const target = e.target.value;
-    const key =e.target.dataset.keyname;
+    const key = e.target.dataset.keyname;
     const value = e.target.value;
     const updatedContact = {...contact};
-    console.log(...contact);
     updatedContact[key] = value;
     setContact(updatedContact);
   };
 
-  function handleSubmission(e) {
-    action(e, contact);
+   const handleSubmit = e => {
+    e.preventDefault();
+    action(contact);
+    setContact({});
   }
 
+
   return (
-    <form onSubmit='handleSubmission(e)' className ='split left' >
+    <form onSubmit={handleSubmit} className='split form'>
+
+      <h1>Submit your Contact Info!</h1>
+
       <label>
-          <h1>Submit your Contact Info!</h1> 
-        <span>Full name</span>
+        <span>Full name: </span>
         <input onChange={handleChange} data-keyname='name' value={contact.name || ''} />
-      </label><br/>
+      </label><br />
+
       <label>
-        <span>Address</span>
-        <input onChange={handleChange} data-keyname='address'  value={contact.address || ''} />
-      </label><br/>
+        <span>Address: </span>
+        <input onChange={handleChange} data-keyname='address' value={contact.address || ''} />
+      </label><br />
+
       <label>
-        <span>City</span>
-        <input onChange={handleChange} data-keyname='city'  value={contact.city || ''} />
-      </label><br/>
+        <span>City: </span>
+        <input onChange={handleChange} data-keyname='city' value={contact.city || ''} />
+      </label><br />
+
       <label>
-        <span>State</span>
-        <input onChange={handleChange} data-keyname='state'  value={contact.state || ''} />
-      </label><br/>
+        <span>State: </span>
+        <input onChange={handleChange} data-keyname='state' value={contact.state || ''} />
+      </label><br />
+
       <label>
-        <span>Zip Code</span>
+        <span>Zip Code: </span>
         <input onChange={handleChange} data-keyname='zipcode' value={contact.zipcode || ''} />
-      </label><br/>
+      </label><br />
+
       <label>
-        <span>Telephone</span>
+        <span>Telephone: </span>
         <input onChange={handleChange} data-keyname='phone' value={contact.phone || ''} />
-      </label><br/>
+      </label><br />
+
       <label>
-        <span>Email</span>
-        <input onChange={handleChange} value={contact.email} />
-      </label><br/>
+        <span>Email: </span>
+        <input onChange={handleChange} data-keyname='email' value={contact.email || ''} />
+      </label><br />
+
       <button type="submit">Submit</button>
+
     </form>
   );
 };

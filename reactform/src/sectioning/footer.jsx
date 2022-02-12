@@ -6,7 +6,7 @@ import '../App.css';
 
 const Footer = () => {
     return (
-      <footer>I am the footer</footer>
+      <footer className = 'footer'>I am the footer</footer>
     );
   }
   
