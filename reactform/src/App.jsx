@@ -6,7 +6,7 @@ import Main from './sectioning/main';
 
 function App() {
   return (
-    <div className="y-wrap">
+    <div className="y-wrap background">
       <Header />
       <Main />
       <Footer />

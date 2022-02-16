@@ -1,23 +1,21 @@
-import ContactDetail from '../components/displaycontacts.jsx';
-import { NavLink } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 
-const ContactSummary = ({ fields }) => {
+const ContactSummary = ({ action, fields }) => {
 
-    const handleClick = e => {
-        const target = e.target.id;
-        console.log(target);
-    };
-
+  
     const contacts = fields.map(contact => {
         return (
-            <li className='displayContact' id={contact.id} key={contact.id}>
-                <NavLink to={contact.id}>{contact.name} </NavLink>
+            <li className='displayContact' key={contact.id}>
+                <NavLink id={contact.id}  to={contact.id}>{contact.name} </NavLink>
             </li>
         );
     });
 
     return (
-        <ul className='contacts' onClick={handleClick}> {contacts}  </ul>
+        <>
+        <ul className="contacts"  onClick={action}> {contacts}  </ul>
+        <Outlet />
+        </>
     )
 };
 

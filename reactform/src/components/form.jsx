@@ -21,7 +21,7 @@ const ContactForm = ({ action }) => {
 
 
   return (
-    <form onSubmit={handleSubmit} className='split form'>
+    <form onSubmit={handleSubmit} className='form'>
 
       <h1>Submit your Contact Info!</h1>
 
